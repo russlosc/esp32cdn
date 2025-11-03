@@ -1,1 +1,8 @@
 <html><body><p>This is a CDN Content</p></body></html>
+<script>
+fetch("http://esp32dev.local/data.json")
+  .then(res => res.json())
+  .then(data => {
+    // Update your UI with sensor data
+  });
+</script>
