@@ -1,8 +1,16 @@
 <html><body><p>This is a CDN Content</p></body></html>
+<h2>ESP32 Live Status</h2>
+<div id='status'>Loading...</div>
 <script>
-fetch("http://esp32dev.local/status")
-  .then(res => res.json())
-  .then(data => {
-    // Update your UI with sensor data
-  });
+function updateStatus() {
+     fetch('/status').then(r => r.json()).then(data => {
+       document.getElementById('status').innerHTML = 
+            'Stepper Pos: ' + data.stepperPos + '<br>' +
+            'Stepper Desired Pos: ' + data.stepperDesiredPos + '<br>'+
+            'Encoder Position: ' + data.encoderPosition + '<br>'+
+            'IP: ' + data.ip;
+      });
+    }";
+    setInterval(updateStatus, 1000);
+    updateStatus();
 </script>
