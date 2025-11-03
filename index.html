@@ -3,7 +3,7 @@
 <div id='status'>Loading...</div>
 <script>
 function updateStatus() {
-     fetch('/status').then(r => r.json()).then(data => {
+     fetch('http://esp32dev.local/status').then(r => r.json()).then(data => {
        document.getElementById('status').innerHTML = 
             'Stepper Pos: ' + data.stepperPos + '<br>' +
             'Stepper Desired Pos: ' + data.stepperDesiredPos + '<br>'+
