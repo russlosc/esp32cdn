@@ -1,20 +1,35 @@
-<html><body><p>This is a CDN Content</p></body></html>
-<h2>ESP32 Live Status</h2>
-<div id='status'>Loading...</div>
-<script>
-function updateStatus() {
-     fetch('http://esp32dev.local/status',{targetAddressSpace: "local"}).then(r => r.json()).then(data => {
-       document.getElementById('status').innerHTML = 
-            'Stepper Pos: ' + data.stepperPos + '<br>' +
-            'Stepper Desired Pos: ' + data.stepperDesiredPos + '<br>'+
-            'Encoder Position: ' + data.encoderPosition + '<br>'+
-            'Kp: ' + data.Kp + '<br>'+
-            'Ki: ' + data.Ki + '<br>'+
-            'Kd: ' + data.Kd + '<br>'+
-            'IP: ' + data.ip + '<br>' +
-            'Ver: ' + data.ver ;
-      });
-    }
-    setInterval(updateStatus, 5000);
-    updateStatus();
+<html>
+<link rel="stylesheet" href="styles.css">
+
+<body>
+  <h2>Tims Lift</h2>
+
+  <div class="tabsBar">
+    <div class="active" id="telemetry">
+      <a href="javascript:">Telemetry</a>
+    </div>
+    <div id="firmware">
+      <a href="javascript:">Firmware Update</a>
+    </div>
+  </div>
+  <div class="tabContent telemetry">
+    This is the telemetry content
+    <div id='status' style="display:none">Loading...</div>
+  </div>
+  <div class="tabContent firmware" style="display: none">
+    <form method='POST' action='/update' enctype='multipart/form-data'>
+      <input type='file' name='update'>
+      <input type='submit' value='Update'>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+<script type="module">
+  import page from "./main.js";
+  page();
 </script>
