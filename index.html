@@ -2,6 +2,11 @@
 <h2>ESP32 Live Status</h2>
 <div id='status'>Loading...</div>
 <script>
+navigator.permissions.query({ name: "local-network-access" })
+.then((result) => {
+  console.log(`LNA permission state: ${result.state}`)
+});
+
 function updateStatus() {
      fetch('http://esp32dev.local/status',{targetAddressSpace: 'private'}).then(r => r.json()).then(data => {
        document.getElementById('status').innerHTML = 
