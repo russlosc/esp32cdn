@@ -74,3 +74,23 @@ input {
     box-shadow: 2px 2px 5px cadetblue;
 
 }
+
+.header {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.header img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px;
+}
+
+.header div {
+    display: inline-block;
+    font-size: 30px;
+    vertical-align: top;
+}
+
+.header div h2 {
+    margin: 0 0 0 0;
+}
