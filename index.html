@@ -16,6 +16,9 @@
     <div id="firmware">
       <a href="javascript:">Firmware Update</a>
     </div>
+     <div id="settings">
+      <a href="javascript:">Settings</a>
+    </div>
   </div>
   <div class="tabContent telemetry">
     This is the telemetry content
@@ -27,6 +30,40 @@
       <input type='submit' value='Update'>
     </form>
 
+  </div>
+  <div class="tabContent settings"  style="display: none">
+    This is the settings content
+     <div id='settings' style="display:none">Settings...</div>
+     <div>Kp<input id="kpInput" type="number" placeholder="Kp" /></div>
+
+      <div>Ki<input id="kiInput" type="number" placeholder="Ki" /></div>
+      <div>Kd<input id="kdInput" type="number" placeholder="Kd" /></div>
+     <div style="margin-top:8px;">
+        <button id="savePidBtn" type="button">Save PID</button>
+        <span id="saveStatus" style="margin-left:8px"></span>
+      </div>
+
+       <!-- Elevator-style buttons to set encoder desired position -->
+    <div id="elevatorPanel" style="margin-bottom:12px;">
+      <div style="margin-bottom:6px;">Quick positions</div>
+      <div>
+        <input type="number" width="10"/>
+        <button class="elevatorBtn" data-pos="0" title="Ground"
+          style="width:56px;height:56px;border-radius:50%;font-weight:bold;margin-right:8px;border:2px solid #444;background:#eee;box-shadow:0 3px #999;">
+          1
+        </button><br>
+          <input type="number"/>
+        <button class="elevatorBtn" data-pos="2500" title="Middle"
+          style="width:56px;height:56px;border-radius:50%;font-weight:bold;margin-right:8px;border:2px solid #444;background:#eee;box-shadow:0 3px #999;">
+          G
+        </button><br>
+                <input type="number"/>
+        <button class="elevatorBtn" data-pos="5000" title="Top"
+          style="width:56px;height:56px;border-radius:50%;font-weight:bold;border:2px solid #444;background:#eee;box-shadow:0 3px #999;">
+          LG
+        </button>
+      </div>
+    </div>
   </div>
 
 </body>

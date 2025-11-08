@@ -94,3 +94,24 @@ input {
 .header div h2 {
     margin: 0 0 0 0;
 }
+
+  /* elevator button base style */
+  .elevatorBtn {
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    font-weight:bold;
+    margin-right:8px;
+    border:2px solid #444;
+    background:#eee;
+    box-shadow:0 10px #999;
+    transition: transform 80ms, box-shadow 80ms, background-color 120ms;
+    cursor: pointer;
+  }
+  /* pressed state: moves down and changes color */
+  .elevatorBtn.pressed,
+  .elevatorBtn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px #666;
+    background: linear-gradient(#00d, #f90);
+  }
