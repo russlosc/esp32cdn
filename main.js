@@ -1,4 +1,4 @@
-export default function page() {
+dexport default function page() {
     var updatingStatus = false;
 
     $(document).ready(function () {
@@ -22,7 +22,14 @@ export default function page() {
             return;
         }
         $("#status").show();
-        fetch('http://esp32dev.local/status', { targetAddressSpace: "local" })
+        fetch('http://esp32dev.local/status', { 
+            method: 'GET', 
+            mode: 'cors', 
+            credentials: 'omit', 
+            headers: { 
+                'Accept': 'application/json'
+            }
+        })
             .then(r => r.json()).then(data => {
                 document.getElementById('status').innerHTML =
                     'Stepper Pos: ' + data.stepperPos + '<br>' +
