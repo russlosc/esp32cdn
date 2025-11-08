@@ -41,7 +41,7 @@ export default function page() {
                     'IP: ' + data.ip + '<br>' +
                     'Ver: ' + data.ver;
                 updatingStatus = false;
-                $("#status").hide();
+                //$("#status").hide();
             }, () => {
                 updatingStatus = false;
                 $("#status").hide();
