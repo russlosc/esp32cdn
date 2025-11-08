@@ -27,9 +27,7 @@ export default function page() {
             mode: 'cors', 
             credentials: 'omit', 
             headers: { 
-                'Content-Type': 'application/json', // Non-simple header
-                'X-Custom-Trigger': 'force-preflight' // Custom header forces preflight
-                
+                'Content-Type': 'application/json'                
             }
         })
             .then(r => r.json()).then(data => {
