@@ -1,4 +1,4 @@
-dexport default function page() {
+export default function page() {
     var updatingStatus = false;
 
     $(document).ready(function () {
