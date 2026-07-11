@@ -56,4 +56,5 @@ $(document).ready(function () {
     // Example: start with red
     setTrafficLight("red");
   
+})
 }
